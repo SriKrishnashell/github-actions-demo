@@ -1,0 +1,20 @@
+name: Hello World Pipeline
+
+# Trigger the workflow when code is pushed to the main branch
+on:
+  push:
+    branches:
+      - main
+
+# Define the job
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest  # Use a Ubuntu virtual machine
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Print a message
+      - name: Say Hello
+        run: echo "Hello, GitHub Actions!"
